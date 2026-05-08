@@ -1,18 +1,43 @@
-# bytesquad
 # REIMS — Rural Education Impact & Monitoring System
 
 ## Quick Start
 
-### Option A — With Backend (Full API mode)
+### 1. Start the Backend
 ```bash
 cd backend
 pip install -r requirements.txt
 python app.py
 ```
-Then open `frontend/index.html` in your browser.
 
-### Option B — Frontend Only (Offline mode)
-Just open `frontend/index.html` directly — all data falls back to the embedded mock dataset automatically.
+### 2. Open the Login Page
+Open `frontend/login.html` in your browser.
+
+### 3. Login Credentials
+
+**Admin Portal** (Full monitoring dashboard):
+- Username: `admin`
+- Password: `admin123`
+
+**School Portal** (Data entry system):
+- Username: `sch001` to `sch008`
+- Password: `school123`
+
+---
+
+## Two Portals
+
+### Admin Portal (`index.html`)
+- Full monitoring dashboard with AI insights
+- Partnership tracking & risk alerts
+- Regional analytics
+- **Unchanged from original design**
+
+### School Portal (`school-portal.html`) — NEW
+- Student data entry & management
+- Attendance marking (bulk & individual)
+- Dropout tracking with reasons
+- Image upload verification
+- Analytics dashboard
 
 ---
 
