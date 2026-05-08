@@ -1,0 +1,320 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REIMS — Rural Education Impact & Monitoring System</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════ SIDEBAR ═══════════════════════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-icon">🏫</div>
+    <div class="brand-text">
+      <span class="brand-title">REIMS</span>
+      <span class="brand-sub">Rural Education Monitor</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active" data-section="dashboard">
+      <span class="nav-icon">📊</span>
+      <span class="nav-label">Dashboard</span>
+    </a>
+    <a href="#" class="nav-item" data-section="schools">
+      <span class="nav-icon">🏫</span>
+      <span class="nav-label">Schools</span>
+    </a>
+    <a href="#" class="nav-item" data-section="ai-insights">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label">AI Insights</span>
+      <span class="nav-badge" id="insight-badge">0</span>
+    </a>
+    <a href="#" class="nav-item" data-section="partnerships">
+      <span class="nav-icon">🤝</span>
+      <span class="nav-label">Partnerships</span>
+    </a>
+    <a href="#" class="nav-item" data-section="risk-alerts">
+      <span class="nav-icon">🚨</span>
+      <span class="nav-label">Risk Alerts</span>
+    </a>
+    <a href="#" class="nav-item" data-section="regions">
+      <span class="nav-icon">🗺️</span>
+      <span class="nav-label">Regions</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="status-dot online"></div>
+    <span>System Online</span>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+<main class="main-content">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="topbar-title" id="pageTitle">Dashboard Overview</div>
+    <div class="topbar-right">
+      <div class="last-updated">Last updated: <span id="lastUpdated">—</span></div>
+      <button class="refresh-btn" id="refreshBtn" title="Refresh data">↻</button>
+    </div>
+  </header>
+
+  <!-- ─── DASHBOARD SECTION ─── -->
+  <section class="section active" id="section-dashboard">
+
+    <!-- KPI Cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card blue">
+        <div class="kpi-icon">🏫</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-schools">—</div>
+          <div class="kpi-label">Total Schools</div>
+        </div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-icon">👩‍🎓</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-students">—</div>
+          <div class="kpi-label">Total Students</div>
+        </div>
+      </div>
+      <div class="kpi-card orange">
+        <div class="kpi-icon">📅</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-attendance">—</div>
+          <div class="kpi-label">Avg Attendance</div>
+        </div>
+      </div>
+      <div class="kpi-card red">
+        <div class="kpi-icon">⚠️</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-dropout">—</div>
+          <div class="kpi-label">Avg Dropout Rate</div>
+        </div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-icon">🤝</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-ngo">—</div>
+          <div class="kpi-label">Avg NGO Support</div>
+        </div>
+      </div>
+      <div class="kpi-card teal">
+        <div class="kpi-icon">🌐</div>
+        <div class="kpi-body">
+          <div class="kpi-value" id="kpi-internet">—</div>
+          <div class="kpi-label">Internet-Enabled</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row 1 -->
+    <div class="charts-row">
+      <div class="chart-card wide">
+        <div class="chart-header">
+          <h3>📈 Attendance Trends by School</h3>
+          <span class="chart-sub">Monthly attendance rates (%)</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="attendanceChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>🎯 Risk Distribution</h3>
+          <span class="chart-sub">Schools by dropout risk level</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="riskDonut"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row 2 -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>📚 Resource Availability</h3>
+          <span class="chart-sub">Infrastructure & books per school</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="resourceBar"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>👩‍🏫 Teacher Activity Level</h3>
+          <span class="chart-sub">Teacher-to-student ratio</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="teacherChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3>🤝 Partnership Engagement</h3>
+          <span class="chart-sub">Avg collaboration scores</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="partnershipRadar"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ─── SCHOOLS SECTION ─── -->
+  <section class="section" id="section-schools">
+    <div class="section-header">
+      <h2>🏫 School Directory</h2>
+      <div class="filter-bar">
+        <select id="regionFilter">
+          <option value="">All Regions</option>
+        </select>
+        <select id="riskFilter">
+          <option value="">All Risk Levels</option>
+          <option value="Critical">Critical</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+    </div>
+    <div class="schools-grid" id="schoolsGrid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ─── AI INSIGHTS SECTION ─── -->
+  <section class="section" id="section-ai-insights">
+    <div class="section-header">
+      <h2>🤖 AI Insights Panel</h2>
+      <span class="section-sub">Rule-based ML analysis of school performance</span>
+    </div>
+    <div class="insights-summary" id="insightsSummary">
+      <!-- populated by JS -->
+    </div>
+    <div class="insights-list" id="insightsList">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ─── PARTNERSHIPS SECTION ─── -->
+  <section class="section" id="section-partnerships">
+    <div class="section-header">
+      <h2>🤝 Partnership Simulation Model</h2>
+      <span class="section-sub">Collaboration strength between Government, NGOs & Schools over time</span>
+    </div>
+
+    <!-- Partnership strength cards -->
+    <div class="partner-cards" id="partnerCards">
+      <!-- populated by JS -->
+    </div>
+
+    <!-- Timeline chart -->
+    <div class="chart-card full-width">
+      <div class="chart-header">
+        <h3>📅 Partnership Strength Over Time</h3>
+        <span class="chart-sub">Monthly collaboration scores</span>
+      </div>
+      <div class="chart-wrap tall">
+        <canvas id="partnershipTimeline"></canvas>
+      </div>
+    </div>
+
+    <!-- Network table -->
+    <div class="chart-card full-width">
+      <div class="chart-header">
+        <h3>🕸️ Collaboration Network</h3>
+        <span class="chart-sub">Partnership links and strength scores</span>
+      </div>
+      <div id="networkViz"></div>
+    </div>
+
+    <!-- Weak areas -->
+    <div class="chart-card full-width">
+      <div class="chart-header">
+        <h3>⚠️ Weak Collaboration Areas</h3>
+      </div>
+      <div id="weakAreas"></div>
+    </div>
+  </section>
+
+  <!-- ─── RISK ALERTS SECTION ─── -->
+  <section class="section" id="section-risk-alerts">
+    <div class="section-header">
+      <h2>🚨 Risk Alert System</h2>
+      <span class="section-sub">Schools flagged for immediate intervention</span>
+    </div>
+    <div class="chart-card full-width">
+      <div class="chart-header">
+        <h3>📊 Dropout Risk Score by School</h3>
+      </div>
+      <div class="chart-wrap tall">
+        <canvas id="riskBarChart"></canvas>
+      </div>
+    </div>
+    <div class="risk-table-wrap">
+      <table class="risk-table" id="riskTable">
+        <thead>
+          <tr>
+            <th>School</th>
+            <th>Region</th>
+            <th>Risk Score</th>
+            <th>Risk Level</th>
+            <th>Attendance</th>
+            <th>Dropout Rate</th>
+            <th>Engagement</th>
+          </tr>
+        </thead>
+        <tbody id="riskTableBody">
+          <!-- populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ─── REGIONS SECTION ─── -->
+  <section class="section" id="section-regions">
+    <div class="section-header">
+      <h2>🗺️ Regional Overview</h2>
+      <span class="section-sub">Aggregated metrics by geographic region</span>
+    </div>
+    <div class="regions-grid" id="regionsGrid">
+      <!-- populated by JS -->
+    </div>
+    <div class="chart-card full-width">
+      <div class="chart-header">
+        <h3>📊 Region Comparison</h3>
+      </div>
+      <div class="chart-wrap tall">
+        <canvas id="regionChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- School Detail Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="schoolModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Loading Spinner -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <p>Loading data…</p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
