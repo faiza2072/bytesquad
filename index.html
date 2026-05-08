@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -43,6 +44,14 @@
     <a href="#" class="nav-item" data-section="regions">
       <span class="nav-icon">🗺️</span>
       <span class="nav-label">Regions</span>
+    </a>
+    <a href="#" class="nav-item" data-section="register-school">
+      <span class="nav-icon">➕</span>
+      <span class="nav-label">Register School</span>
+    </a>
+    <a href="#" class="nav-item" data-section="photo-gallery">
+      <span class="nav-icon">📷</span>
+      <span class="nav-label">Photo Gallery</span>
     </a>
   </nav>
 
@@ -299,6 +308,145 @@
     </div>
   </section>
 
+  <!-- ─── REGISTER SCHOOL SECTION ─── -->
+  <section class="section" id="section-register-school">
+    <div class="section-header">
+      <h2>➕ Register New School</h2>
+      <span class="section-sub">Create a school account and generate login credentials</span>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="reg-layout">
+      <div class="chart-card reg-form-card">
+        <div class="chart-header"><h3>🏫 School Details</h3></div>
+        <form id="registerSchoolForm">
+          <div class="reg-form-grid">
+
+            <div class="reg-field-group"><label>School Name *</label><input type="text" name="school_name" placeholder="e.g. Sundarpur Primary School" required /></div>
+            <div class="reg-field-group"><label>School Type *</label>
+              <select name="school_type" required>
+                <option value="Government">Government</option>
+                <option value="Private">Private</option>
+                <option value="NGO-supported">NGO-supported</option>
+              </select>
+            </div>
+            <div class="reg-field-group"><label>Region *</label><input type="text" name="region" placeholder="e.g. North Bihar" required /></div>
+            <div class="reg-field-group"><label>District *</label><input type="text" name="district" placeholder="e.g. Muzaffarpur" required /></div>
+            <div class="reg-field-group"><label>Block *</label><input type="text" name="block" placeholder="e.g. Kanti" required /></div>
+            <div class="reg-field-group"><label>Village *</label><input type="text" name="village" placeholder="e.g. Rajpur" required /></div>
+            <div class="reg-field-group"><label>Principal Name *</label><input type="text" name="principal_name" placeholder="Full name" required /></div>
+            <div class="reg-field-group"><label>Contact Number *</label><input type="tel" name="contact" placeholder="10-digit number" required /></div>
+            <div class="reg-field-group"><label>Total Students *</label><input type="number" name="students" min="1" placeholder="e.g. 250" required /></div>
+            <div class="reg-field-group"><label>Teacher Count *</label><input type="number" name="teacher_count" min="1" placeholder="e.g. 8" required /></div>
+            <div class="reg-field-group"><label>Funding Status</label>
+              <select name="funding_status">
+                <option value="full">Full</option>
+                <option value="partial" selected>Partial</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div class="reg-field-group"><label>Internet Access</label>
+              <select name="internet_access">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+            <div class="reg-field-group"><label>Infrastructure Score (0–100)</label><input type="number" name="infrastructure_score" min="0" max="100" value="50" /></div>
+            <div class="reg-field-group"><label>NGO Support Level (0–10)</label><input type="number" name="ngo_support_level" min="0" max="10" value="5" /></div>
+
+          </div>
+          <div style="margin-top:20px">
+            <button type="submit" class="reg-btn-primary">Register School & Generate Credentials</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Credentials Card (shown after registration) -->
+      <div class="chart-card reg-cred-card" id="credCard" style="display:none">
+        <div class="chart-header"><h3>🔑 Login Credentials Generated</h3></div>
+        <div class="cred-box">
+          <div class="cred-school-name" id="credSchoolName"></div>
+          <div class="cred-row">
+            <span class="cred-label">School ID</span>
+            <span class="cred-value" id="credSchoolId"></span>
+          </div>
+          <div class="cred-row">
+            <span class="cred-label">Username</span>
+            <span class="cred-value highlight" id="credUsername"></span>
+          </div>
+          <div class="cred-row">
+            <span class="cred-label">Password</span>
+            <span class="cred-value highlight" id="credPassword"></span>
+          </div>
+          <div class="cred-note">Share these credentials with the school administrator. They can log in at the School Portal.</div>
+          <button class="reg-btn-copy" id="copyCredBtn">📋 Copy Credentials</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registered Schools Table -->
+    <div class="chart-card" style="margin-top:20px">
+      <div class="chart-header">
+        <h3>📋 All Registered Schools & Credentials</h3>
+        <span class="chart-sub">All school login credentials managed by admin</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="reg-table" id="registeredSchoolsTable">
+          <thead>
+            <tr>
+              <th>School ID</th>
+              <th>School Name</th>
+              <th>Region</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Registered On</th>
+            </tr>
+          </thead>
+          <tbody id="registeredSchoolsBody">
+            <tr><td colspan="6" style="text-align:center;padding:20px;color:var(--text-muted)">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PHOTO GALLERY SECTION ─── -->
+  <section class="section" id="section-photo-gallery">
+    <div class="section-header">
+      <h2>📷 School Photo Gallery</h2>
+      <span class="section-sub">All verification images uploaded by schools</span>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="gallery-filters">
+      <select id="gallerySchoolFilter">
+        <option value="">All Schools</option>
+      </select>
+      <select id="galleryTypeFilter">
+        <option value="">All Types</option>
+        <option value="attendance_photo">Attendance Photos</option>
+        <option value="register_book">Register Books</option>
+        <option value="event_photo">Event Photos</option>
+      </select>
+      <span class="gallery-count" id="galleryCount">0 photos</span>
+    </div>
+
+    <!-- Gallery grid -->
+    <div class="gallery-grid" id="galleryGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted)">Loading photos...</div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        <div class="lightbox-info" id="lightboxInfo"></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- School Detail Modal -->
@@ -315,6 +463,6 @@
   <p>Loading data…</p>
 </div>
 
-<script src="app.js"></script>
+<script src="frontend.js"></script>
 </body>
 </html>

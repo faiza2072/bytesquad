@@ -1,0 +1,228 @@
+[
+  {
+    "student_id": "SCH001-001",
+    "school_id": "SCH001",
+    "name": "Aarav Kumar",
+    "roll_number": "001",
+    "age": 10,
+    "gender": "Male",
+    "class": "5",
+    "section": "A",
+    "enrollment_date": "2023-06-01",
+    "guardian_name": "Ramesh Kumar",
+    "guardian_contact": "9876543210",
+    "address": "Village Rajpur, Bihar",
+    "dropout_status": false,
+    "dropout_date": null,
+    "dropout_reason": null,
+    "attendance": [
+      {
+        "date": "2024-01-15",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-16",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-17",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-18",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-19",
+        "status": "Late"
+      },
+      {
+        "date": "2026-05-08",
+        "status": "Present"
+      }
+    ]
+  },
+  {
+    "student_id": "SCH001-002",
+    "school_id": "SCH001",
+    "name": "Priya Devi",
+    "roll_number": "002",
+    "age": 11,
+    "gender": "Female",
+    "class": "5",
+    "section": "A",
+    "enrollment_date": "2023-06-01",
+    "guardian_name": "Suresh Devi",
+    "guardian_contact": "9876543211",
+    "address": "Village Rajpur, Bihar",
+    "dropout_status": false,
+    "dropout_date": null,
+    "dropout_reason": null,
+    "attendance": [
+      {
+        "date": "2024-01-15",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-16",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-17",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-18",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-19",
+        "status": "Present"
+      },
+      {
+        "date": "2026-05-08",
+        "status": "Present"
+      }
+    ]
+  },
+  {
+    "student_id": "SCH001-003",
+    "school_id": "SCH001",
+    "name": "Mohan Lal",
+    "roll_number": "003",
+    "age": 12,
+    "gender": "Male",
+    "class": "6",
+    "section": "B",
+    "enrollment_date": "2022-06-01",
+    "guardian_name": "Kishan Lal",
+    "guardian_contact": "9876543212",
+    "address": "Village Rajpur, Bihar",
+    "dropout_status": true,
+    "dropout_date": "2024-02-10",
+    "dropout_reason": "Financial Issues",
+    "attendance": [
+      {
+        "date": "2024-01-15",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-16",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-17",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-18",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-19",
+        "status": "Absent"
+      }
+    ]
+  },
+  {
+    "student_id": "SCH003-001",
+    "school_id": "SCH003",
+    "name": "Sunita Bai",
+    "roll_number": "001",
+    "age": 9,
+    "gender": "Female",
+    "class": "4",
+    "section": "A",
+    "enrollment_date": "2023-06-01",
+    "guardian_name": "Ramji Bai",
+    "guardian_contact": "9876543220",
+    "address": "Village Khetri, MP",
+    "dropout_status": false,
+    "dropout_date": null,
+    "dropout_reason": null,
+    "attendance": [
+      {
+        "date": "2024-01-15",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-16",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-17",
+        "status": "Present"
+      },
+      {
+        "date": "2024-01-18",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-19",
+        "status": "Present"
+      }
+    ]
+  },
+  {
+    "student_id": "SCH003-002",
+    "school_id": "SCH003",
+    "name": "Raju Meena",
+    "roll_number": "002",
+    "age": 10,
+    "gender": "Male",
+    "class": "4",
+    "section": "A",
+    "enrollment_date": "2023-06-01",
+    "guardian_name": "Bhola Meena",
+    "guardian_contact": "9876543221",
+    "address": "Village Khetri, MP",
+    "dropout_status": true,
+    "dropout_date": "2024-01-20",
+    "dropout_reason": "Migration",
+    "attendance": [
+      {
+        "date": "2024-01-15",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-16",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-17",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-18",
+        "status": "Absent"
+      },
+      {
+        "date": "2024-01-19",
+        "status": "Absent"
+      }
+    ]
+  },
+  {
+    "name": "abcdef",
+    "roll_number": "12",
+    "age": 16,
+    "gender": "Female",
+    "class": "10",
+    "section": "A",
+    "enrollment_date": "2010-03-15",
+    "guardian_name": "Kushala",
+    "guardian_contact": "1234567890",
+    "address": "bengaluru",
+    "school_id": "SCH001",
+    "student_id": "SCH001-004",
+    "attendance": [
+      {
+        "date": "2026-05-08",
+        "status": "Present"
+      }
+    ],
+    "dropout_status": false,
+    "dropout_date": null,
+    "dropout_reason": null
+  }
+]

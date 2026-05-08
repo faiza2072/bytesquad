@@ -16,8 +16,34 @@
     "govt_partnership": 55,
     "ngo_partnership": 30,
     "school_partnership": 50,
-    "monthly_attendance": [58, 60, 62, 59, 61, 63, 60, 58, 61, 62, 60, 61],
-    "monthly_performance": [52, 54, 53, 55, 54, 56, 55, 53, 54, 55, 54, 55]
+    "monthly_attendance": [
+      58,
+      60,
+      62,
+      59,
+      61,
+      63,
+      60,
+      58,
+      61,
+      62,
+      60,
+      61
+    ],
+    "monthly_performance": [
+      52,
+      54,
+      53,
+      55,
+      54,
+      56,
+      55,
+      53,
+      54,
+      55,
+      54,
+      55
+    ]
   },
   {
     "school_id": "SCH002",
@@ -36,8 +62,34 @@
     "govt_partnership": 75,
     "ngo_partnership": 70,
     "school_partnership": 72,
-    "monthly_attendance": [70, 72, 74, 73, 75, 76, 74, 73, 75, 76, 74, 75],
-    "monthly_performance": [68, 70, 71, 72, 73, 74, 72, 71, 73, 74, 73, 74]
+    "monthly_attendance": [
+      70,
+      72,
+      74,
+      73,
+      75,
+      76,
+      74,
+      73,
+      75,
+      76,
+      74,
+      75
+    ],
+    "monthly_performance": [
+      68,
+      70,
+      71,
+      72,
+      73,
+      74,
+      72,
+      71,
+      73,
+      74,
+      73,
+      74
+    ]
   },
   {
     "school_id": "SCH003",
@@ -56,8 +108,34 @@
     "govt_partnership": 25,
     "ngo_partnership": 10,
     "school_partnership": 30,
-    "monthly_attendance": [52, 50, 48, 46, 45, 44, 46, 47, 48, 47, 46, 49],
-    "monthly_performance": [40, 38, 37, 36, 35, 34, 35, 36, 37, 36, 35, 36]
+    "monthly_attendance": [
+      52,
+      50,
+      48,
+      46,
+      45,
+      44,
+      46,
+      47,
+      48,
+      47,
+      46,
+      49
+    ],
+    "monthly_performance": [
+      40,
+      38,
+      37,
+      36,
+      35,
+      34,
+      35,
+      36,
+      37,
+      36,
+      35,
+      36
+    ]
   },
   {
     "school_id": "SCH004",
@@ -76,8 +154,34 @@
     "govt_partnership": 88,
     "ngo_partnership": 82,
     "school_partnership": 85,
-    "monthly_attendance": [80, 81, 82, 83, 82, 84, 83, 82, 83, 84, 82, 82],
-    "monthly_performance": [78, 80, 81, 82, 83, 84, 82, 81, 83, 84, 83, 84]
+    "monthly_attendance": [
+      80,
+      81,
+      82,
+      83,
+      82,
+      84,
+      83,
+      82,
+      83,
+      84,
+      82,
+      82
+    ],
+    "monthly_performance": [
+      78,
+      80,
+      81,
+      82,
+      83,
+      84,
+      82,
+      81,
+      83,
+      84,
+      83,
+      84
+    ]
   },
   {
     "school_id": "SCH005",
@@ -96,8 +200,34 @@
     "govt_partnership": 40,
     "ngo_partnership": 20,
     "school_partnership": 35,
-    "monthly_attendance": [58, 57, 56, 55, 54, 53, 54, 55, 55, 54, 53, 55],
-    "monthly_performance": [45, 44, 43, 42, 41, 40, 41, 42, 43, 42, 41, 42]
+    "monthly_attendance": [
+      58,
+      57,
+      56,
+      55,
+      54,
+      53,
+      54,
+      55,
+      55,
+      54,
+      53,
+      55
+    ],
+    "monthly_performance": [
+      45,
+      44,
+      43,
+      42,
+      41,
+      40,
+      41,
+      42,
+      43,
+      42,
+      41,
+      42
+    ]
   },
   {
     "school_id": "SCH006",
@@ -116,8 +246,34 @@
     "govt_partnership": 62,
     "ngo_partnership": 55,
     "school_partnership": 60,
-    "monthly_attendance": [66, 68, 70, 69, 70, 71, 70, 69, 70, 71, 70, 70],
-    "monthly_performance": [62, 64, 65, 66, 67, 68, 66, 65, 67, 68, 67, 68]
+    "monthly_attendance": [
+      66,
+      68,
+      70,
+      69,
+      70,
+      71,
+      70,
+      69,
+      70,
+      71,
+      70,
+      70
+    ],
+    "monthly_performance": [
+      62,
+      64,
+      65,
+      66,
+      67,
+      68,
+      66,
+      65,
+      67,
+      68,
+      67,
+      68
+    ]
   },
   {
     "school_id": "SCH007",
@@ -136,8 +292,34 @@
     "govt_partnership": 20,
     "ngo_partnership": 8,
     "school_partnership": 22,
-    "monthly_attendance": [48, 46, 44, 43, 42, 41, 42, 43, 43, 42, 41, 43],
-    "monthly_performance": [35, 33, 32, 31, 30, 29, 30, 31, 32, 31, 30, 31]
+    "monthly_attendance": [
+      48,
+      46,
+      44,
+      43,
+      42,
+      41,
+      42,
+      43,
+      43,
+      42,
+      41,
+      43
+    ],
+    "monthly_performance": [
+      35,
+      33,
+      32,
+      31,
+      30,
+      29,
+      30,
+      31,
+      32,
+      31,
+      30,
+      31
+    ]
   },
   {
     "school_id": "SCH008",
@@ -156,7 +338,86 @@
     "govt_partnership": 80,
     "ngo_partnership": 75,
     "school_partnership": 78,
-    "monthly_attendance": [74, 76, 77, 78, 78, 79, 78, 77, 78, 79, 78, 78],
-    "monthly_performance": [72, 74, 75, 76, 77, 78, 76, 75, 77, 78, 77, 78]
+    "monthly_attendance": [
+      74,
+      76,
+      77,
+      78,
+      78,
+      79,
+      78,
+      77,
+      78,
+      79,
+      78,
+      78
+    ],
+    "monthly_performance": [
+      72,
+      74,
+      75,
+      76,
+      77,
+      78,
+      76,
+      75,
+      77,
+      78,
+      77,
+      78
+    ]
+  },
+  {
+    "school_id": "SCH009",
+    "school_name": "abc",
+    "region": "bengaluru",
+    "district": "channasandra",
+    "block": "channasandra",
+    "village": "rajpur",
+    "school_type": "Government",
+    "principal_name": "Naveen Kumar",
+    "contact": "9087654321",
+    "students": 300,
+    "attendance_rate": 70.0,
+    "teacher_count": 25,
+    "ngo_support_level": 5,
+    "funding_status": "partial",
+    "infrastructure_score": 50,
+    "internet_access": true,
+    "books_availability": 60,
+    "dropout_rate": 10.0,
+    "community_participation": 50,
+    "govt_partnership": 60,
+    "ngo_partnership": 50,
+    "school_partnership": 60,
+    "monthly_attendance": [
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70,
+      70
+    ],
+    "monthly_performance": [
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60,
+      60
+    ],
+    "registered_on": "2026-05-08"
   }
 ]

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Portal — REIMS</title>
+  <link rel="stylesheet" href="school-floder.css" />
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <span>🏫</span>
+    <span>School Admin Portal</span>
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-school" id="schoolName">—</span>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </div>
+</div>
+
+<!-- NAV TABS -->
+<div class="nav-tabs">
+  <button class="tab-btn active" data-tab="overview">📊 Overview</button>
+  <button class="tab-btn" data-tab="students">👩‍🎓 Students</button>
+  <button class="tab-btn" data-tab="add-student">➕ Add Student</button>
+  <button class="tab-btn" data-tab="attendance">📅 Attendance</button>
+  <button class="tab-btn" data-tab="dropouts">⚠️ Dropouts</button>
+  <button class="tab-btn" data-tab="uploads">📷 Uploads</button>
+  <button class="tab-btn" data-tab="analytics">📈 Analytics</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ─── OVERVIEW SECTION ─── -->
+  <section class="section active" id="section-overview">
+    <div class="section-title">📊 School Overview</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon">👩‍🎓</div>
+        <div class="kpi-value" id="kpi-total">—</div>
+        <div class="kpi-label">Total Students</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">⚠️</div>
+        <div class="kpi-value" id="kpi-dropouts" style="color:var(--red)">—</div>
+        <div class="kpi-label">Dropouts</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📅</div>
+        <div class="kpi-value" id="kpi-attendance" style="color:var(--green)">—</div>
+        <div class="kpi-label">Avg Attendance</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📷</div>
+        <div class="kpi-value" id="kpi-uploads" style="color:var(--primary)">—</div>
+        <div class="kpi-label">Uploads</div>
+      </div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="card">
+        <div class="card-title">School Details</div>
+        <div class="info-row"><span class="info-label">School Name</span><span class="info-value" id="info-name">—</span></div>
+        <div class="info-row"><span class="info-label">School ID</span><span class="info-value" id="info-id">—</span></div>
+        <div class="info-row"><span class="info-label">Region</span><span class="info-value" id="info-region">—</span></div>
+        <div class="info-row"><span class="info-label">Enrolled Students</span><span class="info-value" id="info-students">—</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Resources</div>
+        <div class="info-row"><span class="info-label">Teachers</span><span class="info-value" id="info-teachers">—</span></div>
+        <div class="info-row"><span class="info-label">Infrastructure Score</span><span class="info-value" id="info-infra">—</span></div>
+        <div class="info-row"><span class="info-label">Internet Access</span><span class="info-value" id="info-internet">—</span></div>
+        <div class="info-row"><span class="info-label">Funding Status</span><span class="info-value" id="info-funding">—</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STUDENTS SECTION ─── -->
+  <section class="section" id="section-students">
+    <div class="section-title">👩‍🎓 Student List</div>
+    <div class="filter-bar">
+      <input type="text" id="searchStudent" placeholder="Search by name or roll number..." />
+      <select id="filterClass">
+        <option value="">All Classes</option>
+      </select>
+      <select id="filterStatus">
+        <option value="">All Status</option>
+        <option value="active">Active</option>
+        <option value="dropout">Dropout</option>
+      </select>
+    </div>
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Section</th>
+              <th>Gender</th>
+              <th>Guardian</th>
+              <th>Contact</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <!-- populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ADD STUDENT SECTION ─── -->
+  <section class="section" id="section-add-student">
+    <div class="section-title">➕ Add New Student</div>
+    <div class="card">
+      <form id="addStudentForm">
+        <div class="form-grid">
+          <div class="form-section-title">Student Details</div>
+          <div class="form-group">
+            <label>Student Name *</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="form-group">
+            <label>Roll Number *</label>
+            <input type="text" name="roll_number" required />
+          </div>
+          <div class="form-group">
+            <label>Age *</label>
+            <input type="number" name="age" min="5" max="20" required />
+          </div>
+          <div class="form-group">
+            <label>Gender *</label>
+            <select name="gender" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Class *</label>
+            <input type="text" name="class" placeholder="e.g. 5" required />
+          </div>
+          <div class="form-group">
+            <label>Section *</label>
+            <input type="text" name="section" placeholder="e.g. A" required />
+          </div>
+          <div class="form-group">
+            <label>Enrollment Date *</label>
+            <input type="date" name="enrollment_date" required />
+          </div>
+
+          <div class="form-section-title">Guardian Details</div>
+          <div class="form-group">
+            <label>Guardian Name *</label>
+            <input type="text" name="guardian_name" required />
+          </div>
+          <div class="form-group">
+            <label>Guardian Contact *</label>
+            <input type="tel" name="guardian_contact" placeholder="10-digit number" required />
+          </div>
+          <div class="form-group full">
+            <label>Address (Optional)</label>
+            <textarea name="address" placeholder="Village, District, State"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Add Student</button>
+            <button type="reset" class="btn">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── ATTENDANCE SECTION ─── -->
+  <section class="section" id="section-attendance">
+    <div class="section-title">📅 Mark Attendance</div>
+    <div class="card">
+      <div class="form-group" style="max-width:200px;margin-bottom:20px">
+        <label>Select Date</label>
+        <input type="date" id="attendanceDate" />
+      </div>
+      <form id="attendanceForm">
+        <div class="table-wrap">
+          <table class="attendance-table">
+            <thead>
+              <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+              <!-- populated by JS -->
+            </tbody>
+          </table>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save Attendance</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── DROPOUTS SECTION ─── -->
+  <section class="section" id="section-dropouts">
+    <div class="section-title">⚠️ Dropout Management</div>
+    <div class="card">
+      <div class="card-title">Mark Student as Dropout</div>
+      <form id="dropoutForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Select Student *</label>
+            <select name="student_id" id="dropoutStudentSelect" required>
+              <option value="">Choose student...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Dropout Date *</label>
+            <input type="date" name="dropout_date" required />
+          </div>
+          <div class="form-group full">
+            <label>Reason for Dropout *</label>
+            <select name="dropout_reason" required>
+              <option value="">Select reason...</option>
+              <option value="Financial Issues">Financial Issues</option>
+              <option value="Migration">Migration</option>
+              <option value="Academic Difficulty">Academic Difficulty</option>
+              <option value="Family Issues">Family Issues</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-danger">Mark as Dropout</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <div class="card-title">Dropout List</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Dropout Date</th>
+              <th>Reason</th>
+            </tr>
+          </thead>
+          <tbody id="dropoutTableBody">
+            <!-- populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── UPLOADS SECTION ─── -->
+  <section class="section" id="section-uploads">
+    <div class="section-title">📷 Image Upload & Verification</div>
+    <div class="card">
+      <div class="card-title">Upload Verification Images</div>
+      <form id="uploadForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Upload Type *</label>
+            <select name="upload_type" required>
+              <option value="attendance_photo">Classroom Attendance Photo</option>
+              <option value="register_book">Register/Record Book</option>
+              <option value="event_photo">Event/Program Photo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Link to Student (Optional)</label>
+            <select name="student_id">
+              <option value="">None (General upload)</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Description</label>
+            <textarea name="description" placeholder="Brief description of the image"></textarea>
+          </div>
+        </div>
+        <div class="upload-zone" id="uploadZone">
+          <div class="upload-zone-icon">📤</div>
+          <div class="upload-zone-text">Click or drag image here</div>
+          <div class="upload-zone-sub">JPG, PNG, GIF, WEBP (max 5MB)</div>
+          <input type="file" id="fileInput" name="file" accept="image/*" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Upload Image</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <div class="card-title">Uploaded Images</div>
+      <div class="upload-grid" id="uploadGrid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ANALYTICS SECTION ─── -->
+  <section class="section" id="section-analytics">
+    <div class="section-title">📈 Analytics Dashboard</div>
+
+    <div class="analytics-grid">
+      <div class="card">
+        <div class="card-title">Dropout Reasons Breakdown</div>
+        <div id="dropoutReasons">
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Top 5 Students by Attendance</div>
+        <div id="topAttendance">
+          <!-- populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Student Attendance Summary</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Present Days</th>
+              <th>Total Days</th>
+              <th>Attendance %</th>
+            </tr>
+          </thead>
+          <tbody id="analyticsTableBody">
+            <!-- populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="school-portal.js"></script>
+</body>
+</html>

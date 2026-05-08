@@ -1,0 +1,98 @@
+[
+  {
+    "month": "Jan",
+    "government": 65,
+    "ngo": 58,
+    "school": 70,
+    "communication_freq": 12,
+    "resource_contribution": 55
+  },
+  {
+    "month": "Feb",
+    "government": 67,
+    "ngo": 60,
+    "school": 71,
+    "communication_freq": 14,
+    "resource_contribution": 58
+  },
+  {
+    "month": "Mar",
+    "government": 70,
+    "ngo": 62,
+    "school": 73,
+    "communication_freq": 16,
+    "resource_contribution": 62
+  },
+  {
+    "month": "Apr",
+    "government": 68,
+    "ngo": 55,
+    "school": 72,
+    "communication_freq": 13,
+    "resource_contribution": 60
+  },
+  {
+    "month": "May",
+    "government": 66,
+    "ngo": 50,
+    "school": 70,
+    "communication_freq": 11,
+    "resource_contribution": 57
+  },
+  {
+    "month": "Jun",
+    "government": 64,
+    "ngo": 48,
+    "school": 68,
+    "communication_freq": 10,
+    "resource_contribution": 54
+  },
+  {
+    "month": "Jul",
+    "government": 69,
+    "ngo": 52,
+    "school": 71,
+    "communication_freq": 13,
+    "resource_contribution": 59
+  },
+  {
+    "month": "Aug",
+    "government": 72,
+    "ngo": 56,
+    "school": 74,
+    "communication_freq": 15,
+    "resource_contribution": 63
+  },
+  {
+    "month": "Sep",
+    "government": 75,
+    "ngo": 60,
+    "school": 76,
+    "communication_freq": 17,
+    "resource_contribution": 67
+  },
+  {
+    "month": "Oct",
+    "government": 73,
+    "ngo": 58,
+    "school": 75,
+    "communication_freq": 16,
+    "resource_contribution": 65
+  },
+  {
+    "month": "Nov",
+    "government": 71,
+    "ngo": 55,
+    "school": 73,
+    "communication_freq": 14,
+    "resource_contribution": 62
+  },
+  {
+    "month": "Dec",
+    "government": 74,
+    "ngo": 59,
+    "school": 76,
+    "communication_freq": 16,
+    "resource_contribution": 66
+  }
+]

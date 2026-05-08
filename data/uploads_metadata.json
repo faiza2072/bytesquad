@@ -1,0 +1,71 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "name": "System Administrator"
+  },
+  {
+    "username": "sch001",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH001",
+    "name": "Rajpur Primary School"
+  },
+  {
+    "username": "sch002",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH002",
+    "name": "Sundarpur Middle School"
+  },
+  {
+    "username": "sch003",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH003",
+    "name": "Khetri Village School"
+  },
+  {
+    "username": "sch004",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH004",
+    "name": "Nayagaon High School"
+  },
+  {
+    "username": "sch005",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH005",
+    "name": "Dharampur Primary School"
+  },
+  {
+    "username": "sch006",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH006",
+    "name": "Rampur Central School"
+  },
+  {
+    "username": "sch007",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH007",
+    "name": "Tilakpur Girls School"
+  },
+  {
+    "username": "sch008",
+    "password": "school123",
+    "role": "school",
+    "school_id": "SCH008",
+    "name": "Greenfield Rural Academy"
+  },
+  {
+    "username": "sch009",
+    "password": "school009",
+    "role": "school",
+    "school_id": "SCH009",
+    "name": "abc"
+  }
+]
